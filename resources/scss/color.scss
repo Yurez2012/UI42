@@ -1,0 +1,45 @@
+$-Color-Blue-Dark: rgb(16, 23, 245);
+$-Color-Blue-Middle: rgb(27, 85, 242);
+$-Color-Blue-light: rgb(21, 135, 242);
+$-Color-Green: rgb(28, 205, 152);
+$-Color-White: rgb(243, 252, 250);
+$-Color-Silver-Dark: rgb(197, 195, 195);
+$-Color-Silver-Middle: rgb(73, 73, 73);
+$-Color-Silver-Light: rgb(215, 215, 215);
+
+.color_green {
+    color: $-Color-Green;
+}
+
+.color_white {
+    color: $-Color-White;
+}
+
+.color_blue_light {
+    color: $-Color-Blue-light;
+}
+
+.color_blue_middle {
+    color: $-Color-Blue-Middle;
+}
+
+.color_blue_dark {
+    color: $-Color-Blue-Dark;
+}
+
+
+.color_silver_light {
+    color: $-Color-Silver-Light;
+}
+
+.color_silver_middle {
+    color: $-Color-Silver-Middle;
+}
+
+.color_silver_dark {
+    color: $-Color-Silver-Dark;
+}
+
+.bg_none {
+    background: none !important;
+}

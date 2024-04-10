@@ -1,0 +1,104 @@
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+@import "color.scss";
+@import "mixin.scss";
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    color: $-Color-Blue-Middle;
+    text-decoration: underline;
+}
+
+input {
+    padding: 6px 30px;
+    border-radius: 5px;
+    border: none;
+}
+
+.br_none {
+    border: none !important;
+}
+
+.btn_default {
+  @include btn();
+}
+
+header {
+    border-bottom: 1px solid $-Color-Silver-Light;
+
+    .input-group {
+        border: 1px solid $-Color-Silver-Light;
+        border-radius: 5px;
+        position: relative;
+        width: 244px;
+
+        .input-group-append {
+            position: absolute;
+            right: 5px;
+            top: 4px;
+
+            i {
+                color: $-Color-Silver-Light;
+            }
+        }
+    }
+}
+
+footer {
+    padding: 50px 0px 0px 0px;
+    background: $-Color-Silver-Light;
+
+    ul {
+        font-weight: bold;
+        margin-bottom: 50px;
+
+        li {
+            margin-bottom: 5px;
+            font-weight: normal;
+
+            &:first-of-type {
+                margin-top: 10px;
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: 0px;
+        }
+    }
+
+}
+
+#section_home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $-Color-Blue-light;
+    height: 500px;
+    flex-direction: column;
+
+    h1 {
+        color: $-Color-White;
+        font-size: 58px;
+        font-weight: normal;
+    }
+
+    input {
+        margin-top: 15px;
+        width: 470px;
+        padding: 15px 30px;
+        color: $-Color-Silver-Middle;
+    }
+
+    input[type=text]:hover{
+        box-shadow: 0 0 22pt -3.5pt #604c4c;
+    }
+    input[type=text]:focus {
+        box-shadow: 0 0 22pt -3.5pt #604c4c;
+        outline-width: 0px;
+    }
+}
