@@ -14,6 +14,10 @@ a {
     text-decoration: underline;
 }
 
+h1 {
+    font-weight: normal;
+}
+
 input {
     padding: 6px 30px;
     border-radius: 5px;
@@ -25,7 +29,7 @@ input {
 }
 
 .btn_default {
-  @include btn();
+    @include btn();
 }
 
 header {
@@ -94,11 +98,35 @@ footer {
         color: $-Color-Silver-Middle;
     }
 
-    input[type=text]:hover{
+    input[type=text]:hover {
         box-shadow: 0 0 22pt -3.5pt #604c4c;
     }
+
     input[type=text]:focus {
         box-shadow: 0 0 22pt -3.5pt #604c4c;
         outline-width: 0px;
+    }
+}
+
+.section_city_card {
+    box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+    border-top: 2px solid $-Color-Silver-Dark;
+
+    &_left {
+        padding: 60px;
+        text-align: left;
+        background: #f3f1f1;
+
+        .label {
+            font-weight: bold;
+        }
+    }
+
+    &_right {
+        padding: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 }

@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row pt-3">
             <div class="col-md-12 col-xl-4">
-                <img width="170" src="{{asset('assets/img/logo.png')}}" alt="">
+                <a href="{{route('home')}}">
+                    <img width="170" src="{{asset('assets/img/logo.png')}}" alt="">
+                </a>
             </div>
             <div class="col-md-12 col-xl-8 d-flex justify-content-end flex-wrap align-items-center gap-2">
                 <a href="#" class="text-decoration-none color_blue_dark font-weight-bold">
