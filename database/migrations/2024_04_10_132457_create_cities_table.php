@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('district_id');
             $table->string('name');
-            $table->string('mayor_name');
-            $table->string('city_hall_address');
-            $table->string('phone');
-            $table->string('fax');
-            $table->string('email');
-            $table->string('web_address');
+            $table->string('mayor_name')->nullable(true);
+            $table->string('city_hall_address')->nullable(true);
+            $table->string('phone')->nullable(true);
+            $table->string('fax')->nullable(true);
+            $table->string('email')->nullable(true);
+            $table->string('web_address')->nullable(true);
             $table->timestamps();
 
             $table->foreign('district_id')->references('id')->on('districts');

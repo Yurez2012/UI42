@@ -11,17 +11,15 @@ class District extends Model
     use HasFactory;
 
     /**
+     * @var string
+     */
+    protected $table = 'districts';
+
+    /**
      * @var string[]
      */
     protected $fillable = [
         'name',
-        'name',
-        'mayor_name',
-        'city_hall_address',
-        'phone',
-        'fax',
-        'email',
-        'web_address',
     ];
 
     /**
@@ -29,6 +27,6 @@ class District extends Model
      */
     public function cities()
     {
-        return $this->hasMany(District::class);
+        return $this->hasMany(City::class, 'district_id', 'id');
     }
 }

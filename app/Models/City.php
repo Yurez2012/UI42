@@ -10,8 +10,23 @@ class City extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    /**
+     * @var string
+     */
+    protected $table = 'cities';
 
+    /**
+     * @var string[]
+     */
+    protected $fillable = [
+        'district_id',
+        'name',
+        'mayor_name',
+        'city_hall_address',
+        'phone',
+        'fax',
+        'email',
+        'web_address',
     ];
 
     /**
@@ -19,6 +34,6 @@ class City extends Model
      */
     public function city()
     {
-        return $this->hasOne(City::class);
+        return $this->hasOne(District::class);
     }
 }
