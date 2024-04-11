@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Repositories\CityRepository;
+use App\Services\OpenStreetService;
 use Illuminate\Console\Command;
 
 class DataGeoCode extends Command
@@ -18,13 +20,23 @@ class DataGeoCode extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Get geo by city';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        //
+        $cities     = app(CityRepository::class)->all();
+        $geoService = new OpenStreetService('https://nominatim.openstreetmap.org/search');
+
+        foreach ($cities as $city) {
+            $geoService->queryByParams($city->city_hall_address);
+
+            $city->update([
+                'latitude'  => $geoService->getLatitude(),
+                'longitude' => $geoService->getLongitude(),
+            ]);
+        }
     }
 }

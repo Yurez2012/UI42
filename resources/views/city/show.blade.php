@@ -51,7 +51,7 @@
                             Zemepisné súradnice:
                         </div>
                         <div class="col-md-6 col-xl-6">
-
+                            {{ $city->latitude.', '.$city->longitude}}
                         </div>
                     </div>
                 </div>

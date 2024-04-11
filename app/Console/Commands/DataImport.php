@@ -24,7 +24,7 @@ class DataImport extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Parse district and city';
 
     /**
      * Execute the console command.

@@ -9,6 +9,6 @@ Route::resource('/city', CityController::class)->only('show');
 
 
 Route::get('import_test', function () {
-    \Illuminate\Support\Facades\Artisan::call('data:import');
-    dump('data:import');
+    \Illuminate\Support\Facades\Artisan::call('data:geocode');
+    dump('data:geocode');
 });
