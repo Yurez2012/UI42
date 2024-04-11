@@ -38,5 +38,7 @@ class DataGeoCode extends Command
                 'longitude' => $geoService->getLongitude(),
             ]);
         }
+
+        dump('Geo data saved!');
     }
 }

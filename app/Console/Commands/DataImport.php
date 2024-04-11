@@ -41,6 +41,9 @@ class DataImport extends Command
                 $this->createCity($districtModel, $data);
             }
         }
+
+
+        dump('District and city saved!');
     }
 
     /**
