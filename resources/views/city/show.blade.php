@@ -51,7 +51,9 @@
                             Zemepisné súradnice:
                         </div>
                         <div class="col-md-6 col-xl-6">
-                            {{ $city->latitude.', '.$city->longitude}}
+                            @if($city->latitude && $city->longitude)
+                                {{ $city->latitude.', '.$city->longitude}}
+                            @endif
                         </div>
                     </div>
                 </div>
