@@ -13,4 +13,20 @@ class CityRepository extends Repository
     {
         parent::__construct($city);
     }
+
+    /**
+     * @param $search
+     *
+     * @return mixed
+     */
+    public function getCitiesForAutoCompleteByParams($search = null)
+    {
+        $query = $this->model->select(['id', 'name']);
+
+        if ($search) {
+            $query->where('name', 'like', '%' . $search . '%');
+        }
+
+        return $query->get();
+    }
 }

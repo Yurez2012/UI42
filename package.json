@@ -15,6 +15,7 @@
     "dependencies": {
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
+        "jquery": "^3.7.1",
         "npm-watch": "^0.11.0",
         "sass": "^1.74.1",
         "sass-loader": "^14.1.1"

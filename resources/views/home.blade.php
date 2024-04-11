@@ -7,6 +7,11 @@
     <h1>
         Vyhl'adat v databáze obcí
     </h1>
-    <input type="text"  placeholder="Zadajte názoy">
+    <form action="{{route('city.index')}}" method="GET">
+        <input id="search" type="text" placeholder="Zadajte názoy" name="search">
+    </form>
+    <div id="search_autocomplete" class="">
+
+    </div>
 </div>
 @stop

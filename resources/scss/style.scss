@@ -130,3 +130,26 @@ footer {
         flex-direction: column;
     }
 }
+
+#search_autocomplete {
+    position: absolute;
+    top: 455px;
+    display: block;
+    margin-top: 10px;
+    background: $-Color-White;
+    width: 470px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    ul {
+        padding: 10px;
+        list-style: none;
+        height: 200px;
+        overflow-y: scroll;
+
+        a {
+            text-decoration: none;
+            color: $-Color-Blue-Dark;
+        }
+    }
+}
