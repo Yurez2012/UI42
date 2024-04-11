@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\City;
-use Illuminate\Http\Request;
 
 class CityController extends Controller
 {
-    public function show()
+    public function show(City $city)
     {
-        return view('city.show');
+        return view('city.show', [
+            'city' => $city
+        ]);
     }
 }

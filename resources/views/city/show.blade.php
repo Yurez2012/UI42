@@ -15,48 +15,48 @@
                             Meno starostu:
                         </div>
                         <div class="col-md-6 col-xl-6 mb-3">
-                            Ing. Ivan Patoprsty
+                            {{$city->mayor_name}}
                         </div>
                         <div class="col-md-6 col-xl-6 label mb-3">
                             Adresa obecného úradu:
                         </div>
                         <div class="col-md-6 col-xl-6 mb-3">
-                            SNP 65, 900 84 Báhon
+                            {{$city->city_hall_address}}
                         </div>
                         <div class="col-md-6 col-xl-6 label mb-3">
                             Telefón:
                         </div>
                         <div class="col-md-6 col-xl-6 mb-3">
-                            0907 325 523
+                            {{$city->phone}}
                         </div>
                         <div class="col-md-6 col-xl-6 label mb-3">
                             Fax:
                         </div>
                         <div class="col-md-6 col-xl-6 mb-3">
-                            033 645 5340
+                            {{$city->fax}}
                         </div>
                         <div class="col-md-6 col-xl-6 label mb-3">
                             Email:
                         </div>
                         <div class="col-md-6 col-xl-6 mb-3">
-                            starosta@bahon.sk
+                            {{$city->email}}
                         </div>
                         <div class="col-md-6 col-xl-6 label mb-3">
                             Web:
                         </div>
                         <div class="col-md-6 col-xl-6 mb-3">
-                            www.bahon.com
+                            {{$city->web_address}}
                         </div>
                         <div class="col-md-6 col-xl-6 label">
                             Zemepisné súradnice:
                         </div>
                         <div class="col-md-6 col-xl-6">
-                            48.1523834, 17.0904241
+
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 col-xl-6 section_city_card_right">
-                    <img src="{{ asset('assets/img/icon_test.png') }}" alt="">
+                    <img src="{{ asset($city->file_path) }}" alt="">
                     <h2 class="color_blue_dark mt-3">
                         Nové mesto nad Váhom
                     </h2>

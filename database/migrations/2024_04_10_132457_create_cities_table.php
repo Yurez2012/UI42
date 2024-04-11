@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('fax')->nullable(true);
             $table->string('email')->nullable(true);
             $table->string('web_address')->nullable(true);
+            $table->string('file_path')->nullable(true);
+            $table->string('latitude')->nullable(true);
+            $table->string('longitude')->nullable(true);
             $table->timestamps();
 
             $table->foreign('district_id')->references('id')->on('districts');

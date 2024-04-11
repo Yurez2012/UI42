@@ -27,6 +27,9 @@ class City extends Model
         'fax',
         'email',
         'web_address',
+        'file_path',
+        'latitude',
+        'longitude',
     ];
 
     /**

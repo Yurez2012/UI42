@@ -3,8 +3,11 @@
 namespace App\Console\Commands;
 
 use App\Models\District;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use KubAT\PhpSimple\HtmlDomParser;
 
 class DataImport extends Command
@@ -63,10 +66,10 @@ class DataImport extends Command
     }
 
     /**
-     * @param $url
-     * @param $data
+     * @param $city
      *
-     * @return mixed
+     * @return array
+     * @throws GuzzleException
      */
     public function prepareDataCityByCity($city)
     {
@@ -108,6 +111,7 @@ class DataImport extends Command
                 }
 
                 if (trim($chSecond->plaintext) == 'Web:') {
+                    $data['city_hall_address'] = trim($trSecond->children[$key - 1]->plaintext);
                     $data['web_address'] = trim($trSecond->children[$key + 1]->plaintext);
                 }
 
@@ -116,6 +120,10 @@ class DataImport extends Command
                 }
             }
         }
+
+        //Emblem img
+        $htmlImg = HtmlDomParser::file_get_html($city->href)->find('#telo table td[width=84] img')[0]->src;
+        $data['file_path'] = $this->saveFileFromUrl($htmlImg);
 
         return $data;
     }
@@ -141,5 +149,30 @@ class DataImport extends Command
     public function createCity(District $district, $data)
     {
         return $district->cities()->updateOrCreate($data, $data);
+    }
+
+    /**
+     * @param $url
+     *
+     * @return string
+     * @throws GuzzleException
+     */
+    public function saveFileFromUrl($url)
+    {
+        // Завантаження файлу за URL з використанням GuzzleHttp
+        $client = new Client();
+        $response = $client->get($url);
+
+        // Отримання вмісту файлу
+        $fileContents = $response->getBody()->getContents();
+
+        // Генерування унікального імені файлу
+        $fileName = uniqid() . '.' . pathinfo($url, PATHINFO_EXTENSION);
+
+        // Збереження файлу в системі сховища Laravel
+        Storage::disk('public')->put('emblems/' . $fileName, $fileContents);
+
+        // Прикріплення шляху до збереженого файлу до моделі
+        return 'storage/emblems/' . $fileName;
     }
 }
